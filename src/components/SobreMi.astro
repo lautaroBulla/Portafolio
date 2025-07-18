@@ -1,0 +1,43 @@
+<section>
+  <h1>Lautaro Portillo</h1>
+  <div class="pages">
+    <a class="selected">Sobre mi</a>
+    <a>Proyectos</a>
+    <a>Tecnologias</a>
+  </div>
+</section>
+
+<style>
+  section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .pages {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .pages a {
+    cursor: pointer;
+  }
+  .selected {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+</style>
