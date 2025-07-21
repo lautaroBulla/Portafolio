@@ -1,13 +1,34 @@
 <section>
-  <h1>Lautaro Portillo</h1>
-  <div class="pages">
+  <div id="informacion">
+    <div>
+      <p class="nombre">Lautaro Portillo</p>
+    </div>
+    <p class="descripcion">
+      Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.
+    </p>
+    <div class="redes">
+      <a>
+        <img src="/linkedinDark.png" />
+        LinkedIn
+      </a>
+      <a>
+        <img src="/githubDark.png" />
+        GitHub
+      </a>
+    </div>
+  </div>
+  <nav>
     <a class="selected">Sobre mi</a>
     <a>Proyectos</a>
     <a>Tecnologias</a>
-  </div>
+  </nav>
 </section>
 
 <style>
+  p {
+    margin: 0;
+  }
+
   section {
     height: 100vh;
     width: 100%;
@@ -17,18 +38,44 @@
     align-items: center;
     text-align: center;
   }
-  h1 {
+
+  #informacion {
+    text-align: start;
+    width: 90%;
+  }
+  .nombre {
     font-size: 2rem;
-    margin: 0;
+    font-weight: 700;
+  }
+  .redes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .redes a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: black 1px solid;
+    padding-inline: 1rem;
+    cursor: pointer;
+  }
+  .redes img {
+    width: 25px;
+    height: 25px;
   }
 
-  .pages {
+  nav {
     position: absolute;
-    bottom: 2rem;
     display: flex;
+    bottom: 2rem;
     gap: 2rem;
+    left: 0;
+    right: 0;
+    justify-content: center;
   }
-  .pages a {
+  nav a {
     cursor: pointer;
   }
   .selected {
@@ -36,8 +83,31 @@
   }
 
   @media (min-width: 768px) {
-    h1 {
-      font-size: 5rem;
+    section {
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+    }
+
+    #informacion {
+      width: 80%;
+      padding-left: 2rem;
+    }
+    .nombre {
+      font-size: 4rem;
+    }
+    .descripcion {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      gap: 1rem;
+      padding-right: 2rem;
     }
   }
 </style>
