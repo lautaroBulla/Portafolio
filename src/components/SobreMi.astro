@@ -1,113 +1,101 @@
-<section>
-  <div id="informacion">
-    <div>
-      <p class="nombre">Lautaro Portillo</p>
-    </div>
-    <p class="descripcion">
-      Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.
-    </p>
-    <div class="redes">
-      <a>
-        <img src="/linkedinDark.png" />
-        LinkedIn
-      </a>
-      <a>
-        <img src="/githubDark.png" />
-        GitHub
-      </a>
-    </div>
-  </div>
-  <nav>
-    <a class="selected">Sobre mi</a>
-    <a>Proyectos</a>
-    <a>Tecnologias</a>
-  </nav>
-</section>
+<div id="container">
+  <main>
+    <section id="informacion">
+      <h1>Lautaro Portillo</h1>
+
+      <p>
+        Desarrollador FullStack con experiencia en proyectos reales tanto institucionales como personales.
+      </p>
+
+      <section id="links">
+        <a class="linkedin">
+          <span class="icon"></span>
+          LinkedIn
+        </a>
+        <a class="github">
+          <span class="icon"></span>
+          GitHub
+        </a>
+      </section>
+
+    </section>
+  </main>
+</div>
 
 <style>
-  p {
+  #container {
+		height: 100%;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	#informacion {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		justify-content: center;
+		padding: 1rem;
+	}
+  #informacion h1 {
+		font-size: 1.6rem;
     margin: 0;
-  }
+    line-height: 0.25;
+	}
 
-  section {
-    height: 100vh;
-    width: 100%;
+  #links {
+		display: flex;
+		gap: 1rem;
+	}
+  #links a {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0.1rem 0.2rem;
+    gap: 0.25rem;
   }
-
-  #informacion {
-    text-align: start;
-    width: 90%;
-  }
-  .nombre {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  .redes {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .redes a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: black 1px solid;
-    padding-inline: 1rem;
+  #links a:hover {
     cursor: pointer;
+    background-color: black;
+    color: white;
   }
-  .redes img {
-    width: 25px;
-    height: 25px;
+  #links a .icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    background-size: contain;
+    background-position: center;
   }
-
-  nav {
-    position: absolute;
-    display: flex;
-    bottom: 2rem;
-    gap: 2rem;
-    left: 0;
-    right: 0;
-    justify-content: center;
+  .linkedin .icon {
+    background-image: url(/linkedinDark.png);
   }
-  nav a {
-    cursor: pointer;
+  .linkedin:hover .icon {
+    background-image: url(/linkedinLight.png);
   }
-  .selected {
-    text-decoration: underline;
+  .github .icon {
+    background-image: url(/githubDark.png);
   }
+  .github:hover .icon {
+    background-image: url(/githubLight.png);
+  }
+  
 
   @media (min-width: 768px) {
-    section {
-      height: 100vh;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr auto;
+    #informacion h1 {
+      font-size: 3rem;
+      line-height: 0.5;
     }
 
-    #informacion {
-      width: 80%;
-      padding-left: 2rem;
-    }
-    .nombre {
-      font-size: 4rem;
-    }
-    .descripcion {
-      font-size: 1.2rem;
+    #informacion p {
+      font-size: 1.3rem;
     }
 
-    nav {
-      position: static;
-      display: flex;
-      flex-direction: column;
-      text-align: start;
-      gap: 1rem;
-      padding-right: 2rem;
+    #links a {
+      padding: 0.25rem 0.5rem;
+      gap: 0.5rem;
     }
   }
 </style>
