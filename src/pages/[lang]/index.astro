@@ -1,0 +1,25 @@
+---
+import Welcome from '../../components/Welcome.astro';
+import SobreMi from '../../components/SobreMi.astro'
+import Proyectos from '../../components/Proyectos.astro'
+import Habilidaes from '../../components/Habilidades.astro'
+import Layout from '../../layouts/Layout.astro';
+
+import es from '../../i18n/es';
+import en from '../../i18n/en';
+import type { Language } from '../../types/language.type';
+
+export function getStaticPaths () {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+
+export const defaultRedirect = '/es';
+
+const lang = Astro.params.lang as Language;
+const translations = { es, en };
+const t = translations[lang];
+---
+
+<Layout lang={lang} t={t}>
+	<SobreMi lang={lang} t={t} />
+</Layout>
