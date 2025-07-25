@@ -1,5 +1,6 @@
 export default {
   themeOptions: {
+    label: "Theme",
     dark: "Dark",
     light: "Light"
   },
